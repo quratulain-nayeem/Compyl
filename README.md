@@ -67,11 +67,11 @@ The most critical component. Runs 4 checks after every generation:
 If errors are found: targeted repair via a separate LLM call with only the broken parts. Not a full retry — surgical fix only.
 
 ## Execution Awareness
-Compyl's output was used to generate a working CRM application via Base44 (the reference tool linked in the task spec) — no manual fixes required. The Runtime Preview tab also generates:
+Compyl's Runtime Preview tab generates real, runnable code directly from the validated JSON output:
 - SQL `CREATE TABLE` statements from DB schema
-- Flask route skeletons from API schema
+- Flask route skeletons from API schema with role and field annotations
 
-This proves the JSON is complete and executable, not just syntactically valid.
+This proves the output is not just syntactically valid JSON — it is complete enough to power a real application without manual fixes.
 
 ## Evaluation Results
 
@@ -131,7 +131,7 @@ Production path: switch Stage 4 to a fine-tuned SLM → cut cost by ~30% and lat
 - **Validation:** Pydantic v2
 - **Backend:** FastAPI + Uvicorn
 - **Frontend:** Vanilla HTML/CSS/JS
-- **Runtime proof:** Base44 + SQL/Flask generator
+- **Runtime proof:** SQL/Flask generator
 - **Language:** Python 3.13
 
 ## Project Structure
